@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -22,13 +24,27 @@ export default {
     };
   },
   methods: {
-    login() {
-      // This method will handle the login logic
-      console.log('Attempting to log in with:', this.username);
+    async login() {
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/api/token/', {
+          username: this.username,
+          password: this.password
+        });
+        console.log('Login successful:', response.data);
+        localStorage.setItem('accessToken', response.data.access);
+        localStorage.setItem('refreshToken', response.data.refresh);
+        localStorage.setItem('username', this.username)
+        // Navigate the user to a new page (e.g., a dashboard or ingredients page)
+        // We'll create this page next. For now, let's just go to the home page.
+        this.$router.push('/dashboard');
+      } catch (error) {
+        console.error('Login failed:', error.response.data);
+      }
     }
   }
 };
 </script>
+
 
 <style scoped>
 .login {
