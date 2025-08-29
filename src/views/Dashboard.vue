@@ -2,6 +2,7 @@
   <div class="dashboard">
     <h2>Welcome, {{ username }}!</h2>
     <p>This is your dashboard. You are logged in.</p>
+    <router-link to="/ingredients" class="btn">Go to Ingredients</router-link>
     <button @click="logout">Logout</button>
   </div>
 </template>
