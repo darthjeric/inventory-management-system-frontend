@@ -17,6 +17,8 @@
         </select>
         <button type="submit">Delete Ingredient</button>
     </form>
+    <br>
+    <router-link to="/dashboard" class="btn">Back to Dashboard</router-link>
     <hr>
     <div v-if="ingredients.length > 0">
       <ul>

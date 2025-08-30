@@ -3,6 +3,7 @@ import Login from '../views/Login.vue';
 import Register from '../views/Register.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Ingredients from '../views/Ingredients.vue'
+import Restock from '../views/Restock.vue'
 
 const routes = [
   {
@@ -25,6 +26,12 @@ const routes = [
     path: '/ingredients',
     name: 'Ingredients',
     component: Ingredients,
+    meta:{requiresAuth: true}
+  },
+  {
+    path: '/restock',
+    name: 'Restock',
+    component: Restock,
     meta:{requiresAuth: true}
   }
 ]
