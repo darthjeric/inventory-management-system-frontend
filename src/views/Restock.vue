@@ -20,12 +20,15 @@
                 -
             </button>
         </div>
+        
         <button type="button" @click="addRestockItem">+ Add item</button>
         <br>
-        <router-link to="/dashboard" class="btn">Back to Dashboard</router-link>
+        <button type="submit">Restock Ingredient</button>
         <br>
 
     </form>
+    <router-link to="/dashboard" class="btn">Back to Dashboard</router-link>
+    <br>
     <hr>
     <div v-if="ingredients.length > 0">
       <ul>

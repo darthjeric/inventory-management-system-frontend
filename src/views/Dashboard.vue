@@ -6,6 +6,8 @@
     <br>
     <router-link to="/restock" class="btn">Restock Ingredients</router-link>
     <br>
+    <router-link to="/recipe" class="btn">Recipe list</router-link>
+    <br>
     <button @click="logout">Logout</button>
   </div>
 </template>
